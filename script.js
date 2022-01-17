@@ -75,6 +75,7 @@ function setAis() {
     versionTitle.innerHTML = "ALDI International Services";
     visualise(aisCostCentre);
     hide(aheadCostCentre);
+    costObjectContainer.children[0].style.display = "inline-block";
     costObjectContainer.children[1].style.display = "inline-block";
 };
 
@@ -82,6 +83,7 @@ function setAhead() {
     versionTitle.innerHTML = "AHEAD";
     visualise(aheadCostCentre);
     hide(aisCostCentre);
+    costObjectContainer.children[0].style.display = "inline-block";
     costObjectContainer.children[1].style.display = "inline-block";
 };
 
@@ -142,9 +144,9 @@ function checkAheadCostCentreValue() {
 /****** INPUT CELLS *****/
 let inputLabel = document.querySelectorAll(".inputLabel");
 
-let labelNamesGerman = ["Vorname", "Nachname", "Personalnummer", "Reisedatum von", "Reisedatum bis", "Reiseland", "IBAN", "BIC", "Bank", "eigenem PKW", "firmen PKW", "Mietwagen", "Bahn bzw. Flugzeug", "Kennzeichen", "Fahrtkosten", "Verpflegungskosten", "Nebenkosten", "Datum", "Abf. Uhrzeit", "Rückk. Uhrzeit", "Reiseziel", "Reisezweck", "gefahrene km", "abzgl. Arbeitsweg km", "Summe", "Pauschale", "Abzug für Mahlzeiten", "Art", "Betrag in EUR", "Subtotal Fahrtkosten", "Subtotal Pauschale", "Subtotal Nebenkosten", "Kostenstelle", "(bitte ankreuzen)"];
+let labelNamesGerman = ["Vorname", "Nachname", "Personalnummer", "Reisedatum von", "Reisedatum bis", "Reiseland", "IBAN", "BIC", "Bank", "eigenem PKW", "firmen PKW", "Mietwagen", "Bahn bzw. Flugzeug", "Kennzeichen", "Datum", "Abf. Uhrzeit", "Rückk. Uhrzeit", "Reiseziel", "Reisezweck", "gefahrene km", "abzgl. Arbeitsweg km", "Summe", "Pauschale", "Abzug für Mahlzeiten", "Art", "Betrag in EUR", "Fahrtkosten", "Pauschale", "Nebenkosten", "Alle Kosten", "Kostenstelle", "(bitte ankreuzen)"];
 
-let labelNamesEnglish = ["First Name", "Last Name", "Personal Number", "Date of travel from", "Date of travel to", "Destination", "IBAN", "BIC", "Bank", "own vehicle", "company car", "hire car", "train and/or aeroplane", "registration plate", "Car Travel Costs", "Expenses incurred for meals", "Incidental Expenses", "Date", "Dep. time", "Return time", "Destination", "Purpose of travel", "km travelled", "minus commuting distance in km", "sub-total", "Fixed rate", "Deduction for meals", "Type", "Amount in EUR", "Subtotal Car Travel Costs", "Subtotal Meal Costs", "Subtotal Incidental Costs", "Cost centre", "(please select)"];
+let labelNamesEnglish = ["First Name", "Last Name", "Personal Number", "Date of travel from", "Date of travel to", "Destination", "IBAN", "BIC", "Bank", "own vehicle", "company car", "hire car", "train and/or aeroplane", "registration plate", "Date", "Dep. time", "Return time", "Destination", "Purpose of travel", "km travelled", "minus commuting distance in km", "sub-total", "Fixed rate", "Deduction for meals", "Type", "Amount in EUR", "Car Travel Costs", "Meal Costs", "Incidental Costs", "Total Costs", "Cost centre", "(please select)"];
 
 /******** REQUIRED INPUTS VALIDATION **************/
 let mandatoryInputs = {
@@ -363,7 +365,7 @@ function createExpenseCells(row) {
 
 function createDeleteBtn(row) {
     let deleteBtn = document.createElement("button");
-    let deleteBtnText = document.createTextNode("Delete Cost");
+    let deleteBtnText = document.createTextNode("X");
     deleteBtn.classList.add("delete-btn");
     deleteBtn.appendChild(deleteBtnText);
     deleteBtn.addEventListener('click', deleteCost);
@@ -378,21 +380,21 @@ function deleteCost() {
 };
 
 function calculateTotalCost() {
-    totalCostParagraph.value = calculteElements('car-travel-cost') + calculteElements('meal-cost') + calculteElements('incidental-cost');
+    totalCostParagraph.value = calculteElements('car-travel-cost') + calculteElements('meal-cost') + calculteElements('incidental-cost') + " EUR";
 };
 
 function calculateCarTravelCost() {
-    carTravelCostParagraph.value = calculteElements('car-travel-cost');
+    carTravelCostParagraph.value = calculteElements('car-travel-cost') + " EUR";
     calculateTotalCost();
 };
 
 function calculateMealCost() {
-    mealCostParagraph.value = calculteElements('meal-cost');
+    mealCostParagraph.value = calculteElements('meal-cost') + " EUR";
     calculateTotalCost();
 };
 
 function calculateIncidentalCost() {
-    incidentalCostParagraph.value = calculteElements('incidental-cost');
+    incidentalCostParagraph.value = calculteElements('incidental-cost') + " EUR";
     calculateTotalCost();
 };
 
