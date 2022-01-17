@@ -79,6 +79,11 @@
     border-radius: 10px;
 }
 
+.ok-btn:hover {
+    background-color: #FFFFFF;
+    color: #FA6E0A;
+}
+
 .mandatory-error {
     border-color: #FF0000;
 }
@@ -100,18 +105,9 @@
     display: none;
 }
 
-#registration-plate {
-    visibility: hidden;
-}
-
-.new-expense-cell-input {
-    width: 50px;
-    height: 20px;
-}
-
 #version-title-container{
     position: relative;
-    margin: 10px 500px;
+    margin: 10px 450px;
     width: 800px;
 }
 
@@ -119,31 +115,216 @@
     width: 800px;
     font-family: sans-serif;
     font-size: 40px;
+    font-weight: 600;
     color: #FF0000;
+}
+#mandatory-data-container {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+#personal-data-container {
+    display: inline-block;
+    padding: 20px 100px 20px 100px;
+}
+#personal-data-container > div {
+    padding: 5px 0px 5px 0px;
+}
+
+
+#travel-data-container {
+    display: inline-block;
+    padding: 20px 40px 20px 40px;
+
+}
+#travel-data-container > div {
+    padding: 5px 0px 5px 0px;
+}
+
+#bank-data-container {
+    display: inline-block;
+    padding: 20px 100px 20px 100px;
+}
+#bank-data-container > div {
+    padding: 5px 0px 5px 0px;
+}
+
+#transportation {
+    margin-left: 25%;
+    margin-right: 25%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.data-label {
+    display: block;
+    font-family: sans-serif;
+    font-weight: 600;
+}
+
+#registration-plate {
+    visibility: hidden;
+}
+#travel-expenses-table {
+    width: 100%;
+}
+
+tr > td {
+    border: 2px solid #000000;
+}
+.table-title {
+    font-size: 15px;
+    width: 100px;
+    text-align: center;
+}
+.new-expense-container > td {
+    text-align: center;
+}
+
+.new-expense-cell-input {
+    width: 100px;
+    height: 20px;
+}
+
+.inputLabel {
+    font-size: 15px;
+    font-family: sans-serif;
+}
+
+.new-expense-container .new-expense-cell-input {
+    width: 60px;
+}
+
+#cost-container {
+    display: inline-block;
+    padding: 20px 20px 20px 20px;
+}
+
+#cost-container > div {
+    display: inline-block;
+}
+
+#subtotal-car-travel-costs > label {
+    display: inline-block;
+}
+
+#subtotal-meal-costs > label {
+    display: inline-block;
+}
+
+#subtotal-incidental-costs > label {
+    display: inline-block;
+}
+
+#total-cost > label {
+    display: inline-block;
+}
+
+.cost-input {
+    display: inline-block;
+    width: 70px;
+}
+
+#add-expense-btn-container {
+    display: inline-block;
+    margin: 25px 25px 25px 470px;
 }
 
 .cost-object-container {
+    padding: 20px 20px 20px 20px;
     width: 250px;
     height: 250px;
-    background-color: blue;
 }
 
 .ais-cost-centre {
     width: 250px;
     height: 160px;
-    background-color: red;
+    padding: 30px 0px 0px 0px;
     display: none;
 }
 
 .ahead-cost-centre {
     width: 250px;
     height: 50px;
-    background-color: green;
+    padding: 30px 0px 0px 0px;
     display: none;
+}
+.cost-centre-label {
+    font-family: sans-serif;
+}
+
+#cost-id-nr-title {
+    font-family: sans-serif;
 }
 
 #cost-id-nr-container {
+    padding: 30px 0px 0px 0px;
     display: none;
+}
+.delete-btn {
+    width: 25px;
+    height: 25px;
+    background-color: #FA6E0A;
+    color: #FFFFFF;
+    font-family: sans-serif;
+    font-size: 15px;
+    border-radius: 5px;
+}
+.delete-btn:hover {
+    background-color: #FFFFFF;
+    color: #FA6E0A;
+}
+
+#back-btn-container {
+    float: right;
+    margin: 0px 65px 0px 0px;
+}
+
+#submit-btn-container {
+    position: absolute;
+    left: 500px;
+}
+
+#submit-btn {
+    width: 300px;
+    height: 50px;
+    background-color: #FA6E0A;
+    color: #FFFFFF;
+    font-family: sans-serif;
+    font-size: 40px;
+    border-radius: 10px;
+}
+#submit-btn:hover {
+    background-color: #FFFFFF;
+    color: #FA6E0A;
+}
+#add-expense-btn {
+    width: 100px;
+    height: 30px;
+    background-color: #FA6E0A;
+    color: #FFFFFF;
+    font-family: sans-serif;
+    font-size: 13px;
+    border-radius: 7px;
+}
+#add-expense-btn:hover {
+    background-color: #FFFFFF;
+    color: #FA6E0A;
+}
+
+#back-btn {
+    width: 100px;
+    height: 30px;
+    background-color: #FA6E0A;
+    color: #FFFFFF;
+    font-family: sans-serif;
+    font-size: 13px;
+    border-radius: 7px;
+}
+
+#back-btn:hover {
+    background-color: #FFFFFF;
+    color: #FA6E0A;
 }
 
 /************** THIRD PAGE ************/
