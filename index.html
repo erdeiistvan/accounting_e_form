@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Travel Expenses</title>
-    <!--<link rel="stylesheet" href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css">-->
     <link rel="stylesheet" href="style.css"> 
 </head>
 
@@ -39,26 +38,31 @@
         </div>
 
         <div class="ok-btn-container">
-            <button class="ok-btn">OK</button>
+            <button class="ok-btn btn">OK</button>
         </div>
 
     </div>
 </div>
 
 <div class="travel-expenses-menu">
+    
+    <div id="version-title-container">
+        <p id="version-title">ALDI International Services</p>
+    </div>
 
+    <div id="mandatory-data-container">
     <div id="personal-data-container">
         
         <div id="user-first-name-container" class="mandatory-text">
-            <label class="inputLabel">First Name</label>
+            <label class="inputLabel data-label">First Name</label>
             <input id="user-first-name-input" class="input-value" placeholder="e.g.: John">
         </div>
         <div id="user-last-name-container" class="mandatory-text">
-            <label class="inputLabel">Last Name</label>
+            <label class="inputLabel data-label">Last Name</label>
             <input id="user-last-name-input" class="input-value" placeholder="e.g.: Smith">
         </div>
         <div id="user-personal-number-container" class="mandatory-number">
-            <label  class="inputLabel">Personal Number</label>
+            <label  class="inputLabel data-label">Personal Number</label>
             <input id="user-personal-number-input" class="input-value">
         </div>
         
@@ -66,15 +70,15 @@
 
     <div id="travel-data-container">
         <div id="date-of-travel-from-container" class="mandatory-date">
-            <label class="inputLabel">Date of travel from</label>
+            <label class="inputLabel data-label">Date of travel from</label>
             <input id="date-of-travel-from" type="date" class="input-value">
         </div>
         <div id="date-of-travel-to-container" class="mandatory-date">
-            <label class="inputLabel">Date of travel to</label>
+            <label class="inputLabel data-label">Date of travel to</label>
             <input id="date-of-travel-to" type="date" class="input-value">
         </div>
         <div id="destination-container" class="mandatory-text">
-            <label id="destination" class="inputLabel">Destination</label>
+            <label id="destination" class="inputLabel data-label">Destination</label>
             <input>
         </div>
         
@@ -82,18 +86,20 @@
 
     <div id="bank-data-container">
         <div id="iban-container" class="mandatory-text">
-            <label id="iban" class="inputLabel">IBAN</label>
+            <label id="iban" class="inputLabel data-label">IBAN</label>
             <input>
         </div>
         <div id="bic-container" class="mandatory-text">
-            <label id="bic" class="inputLabel">BIC</label>
+            <label id="bic" class="inputLabel data-label">BIC</label>
             <input>
         </div>    
         <div id="bank-container" class="mandatory-text">    
-            <label id="bank" class="inputLabel">Bank</label>
+            <label id="bank" class="inputLabel data-label">Bank</label>
             <input>
         </div>
     </div>
+
+    
 
 
     <div id="transportation">
@@ -114,56 +120,52 @@
             <label class="inputLabel">registration plate</label>
             <input id="registration-plate-input">
         </div>
-
     </div>
-
-    <div id="version-title-container">
-        <p id="version-title">ALDI International Services</p>
     </div>
 
     <table id="travel-expenses-table">
 
         <tr>
-            <td class="inputLabel">Car Travel Costs</td>
-            <td class="inputLabel">Expenses incurred for meals</td>
-            <td class="inputLabel">Incidental Expenses</td>
-        </tr>
-
-        <tr>
-            <td class="inputLabel">Date</td>
-            <td class="inputLabel">Dep. time</td>
-            <td class="inputLabel">Return time</td>
-            <td class="inputLabel">Destination</td>
-            <td class="inputLabel">Purpose of travel</td>
-            <td class="inputLabel">km travelled</td>
-            <td class="inputLabel">minus commuting distance in km</td>
-            <td class="inputLabel">sub-total</td>
-            <td class="inputLabel">Fixed rate</td>
-            <td class="inputLabel">Deduction for meals</td>
-            <td class="inputLabel">Type</td>
-            <td class="inputLabel">Amount in EUR</td>
+            <td class="inputLabel table-title">Date</td>
+            <td class="inputLabel table-title">Dep. time</td>
+            <td class="inputLabel table-title">Return time</td>
+            <td class="inputLabel table-title">Destination</td>
+            <td class="inputLabel table-title">Purpose of travel</td>
+            <td class="inputLabel table-title">km travelled</td>
+            <td class="inputLabel table-title">minus commuting distance in km</td>
+            <td class="inputLabel table-title">sub-total</td>
+            <td class="inputLabel table-title">Fixed rate</td>
+            <td class="inputLabel table-title">Deduction for meals</td>
+            <td class="inputLabel table-title">Type</td>
+            <td class="inputLabel table-title">Amount in EUR</td>
         </tr>
 
     </table>
 
-    <div id="subtotal-car-travel-costs">
-        <label class="inputLabel">Subtotal Car Travel Costs</label>
-        <input class="subtotal input-value" readonly>
+    <div id="cost-container">
+        <div id="subtotal-car-travel-costs">
+            <label class="inputLabel data-label">Car Travel Costs</label>
+            <input class="cost-input input-value" readonly>
+        </div>
+
+        <div id="subtotal-meal-costs">
+            <label class="inputLabel data-label">Meal Costs</label>
+            <input class="cost-input input-value" readonly>
+        </div>
+
+        <div id="subtotal-incidental-costs">
+            <label class="inputLabel data-label">Incidental Costs</label>
+            <input class="cost-input input-value" readonly>
+        </div>
+
+        <div id="total-cost">
+            <label class="inputLabel data-label">Total Costs</label>
+            <input class="cost-input input-value" readonly>
+        </div>
     </div>
 
-    <div id="subtotal-meal-costs">
-        <label class="inputLabel">Subtotal Meal Costs</label>
-        <input class="subtotal input-value" readonly>
-    </div>
-
-    <div id="subtotal-incidental-costs">
-        <label class="inputLabel">Subtotal Incidental Costs</label>
-        <input class="subtotal input-value" readonly>
-    </div>
-
-    <div id="total-cost">
-        <label>Total</label>
-        <input class="input-value" readonly>
+    <div id="add-expense-btn-container"> 
+        <button id="add-expense-btn" class="btn">Add Expense</button>
     </div>
 
     <div class="cost-object-container">
@@ -175,35 +177,35 @@
 
             <div>
                 <input type="radio" class="radio-btn" name="ais-cost-centre" id="041-ib" value="041-ib">
-                <label for="041-ib">041/IB</label>
+                <label for="041-ib" class="cost-centre-label">041/IB</label>
             </div>
             <div>
                 <input type="radio" class="radio-btn" name="ais-cost-centre" id="051-iia" value="051-iia">
-                <label for="051-iia">051/IIA</label>
+                <label for="051-iia" class="cost-centre-label">051/IIA</label>
             </div>
             <div>
                 <input type="radio" class="radio-btn" name="ais-cost-centre" id="052-iia-rcm" value="052-iia-rcm">
-                <label for="052-iia-rcm">052/IIA RCM</label>
+                <label for="052-iia-rcm" class="cost-centre-label">052/IIA RCM</label>
             </div>
             <div>
                 <input type="radio" class="radio-btn" name="ais-cost-centre" id="061-iit" value="061-iit">
-                <label for="061-iit">061/IIT</label>
+                <label for="061-iit" class="cost-centre-label">061/IIT</label>
             </div>
             <div>
                 <input type="radio" class="radio-btn" name="ais-cost-centre" id="011-ias-intern" value="011-ias-intern">
-                <label for="011-ias-intern">011/IAS Intern</label>
+                <label for="011-ias-intern" class="cost-centre-label">011/IAS Intern</label>
             </div>
             <div>
                 <input type="radio" class="radio-btn" name="ais-cost-centre" id="012-ias-extern" value="012-ias-extern">
-                <label for="012-ias-extern">012/IAS Extern</label>
+                <label for="012-ias-extern" class="cost-centre-label">012/IAS Extern</label>
             </div>
             <div>
                 <input type="radio" class="radio-btn" name="ais-cost-centre" id="013-ias-sondernkosten" value="013-ias-sondernkosten">
-                <label for="013-ias-sondernkosten">013/IAS Sondernkosten</label>
+                <label for="013-ias-sondernkosten" class="cost-centre-label">013/IAS Sondernkosten</label>
             </div>
             <div>
                 <input type="radio" class="radio-btn" name="ais-cost-centre" id="014-ias-translation" value="014-ias-translation">
-                <label for="014-ias-translation">014/IAS Translation</label>
+                <label for="014-ias-translation" class="cost-centre-label">014/IAS Translation</label>
             </div>
 
         </div>
@@ -212,12 +214,12 @@
 
             <div>
                 <input type="radio" class="radio-btn" name="ahead-cost-centre" id="5100-project" value="5100-project">
-                <label for="5100-project">5100 AHEAD Project</label>
+                <label for="5100-project" class="cost-centre-label">5100 AHEAD Project</label>
             </div>
 
             <div>
                 <input type="radio" class="radio-btn" name="ahead-cost-centre" id="5000-non-project" value="5000-non-project">
-                <label for="5000-non-project">5100 AHEAD Non-project</label>
+                <label for="5000-non-project" class="cost-centre-label">5100 AHEAD Non-project</label>
             </div>
 
         </div>
@@ -229,16 +231,12 @@
 
     </div>
 
-    <div>
-        <button id="back-btn">Back</button>
+    <div id="back-btn-container">
+        <button id="back-btn" class="btn">Back</button>
     </div>
 
-    <div>
-        <button id="add-expense-btn">Add Expense</button>
-    </div>
-
-    <div>
-        <button id="submit-btn">Submit</button>
+    <div id="submit-btn-container">
+        <button id="submit-btn" class="btn">Submit</button>
     </div>
 
 </div>
@@ -292,22 +290,18 @@
         <div>
             <label>Fahrtkosten</label>
             <span id="user-car-travel-costs" class="user-data"></span>
-            <span>EUR</span>
         </div>
         <div>
             <label>Verpflegungskosten</label>
             <span id="user-meal-costs" class="user-data"></span>
-            <span>EUR</span>
         </div>
         <div>
             <label>Nebenkosten</label>
             <span id="user-incidental-costs" class="user-data"></span>
-            <span>EUR</span>
         </div>
         <div></div>
             <label>Alle Kosten</label>
             <span id="user-total-costs" class="user-data"></span>
-            <span>EUR</span>
         </div>
         <div>
             <label id="user-cost-id-number-label">Cost ID Number</label>
