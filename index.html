@@ -1,0 +1,326 @@
+<!DOCTYPE=html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Travel Expenses</title>
+    <!--<link rel="stylesheet" href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css">-->
+    <link rel="stylesheet" href="style.css"> 
+</head>
+
+<body>
+
+<div class="start-menu">
+    <div class="start-menu-header">
+        <img src="pictures/ALDI_logo.png" class="logo">
+        <div class="title-container">
+            <p class="title">Travel Expenses Template</p>
+        </div>
+    </div>
+    <div class="start-menu-body">
+
+        <p class="instruction">Please select your appropriate language and template version (AHEAD/ALDI International Services/ALDI Digital Services). Confirm the selection with the "OK".</p>
+
+        <div class="language-container">
+            <label for="language">Language Selection</label>
+            <select id="language">
+                <option value="english" selected>English</option>
+                <option value="german">German</option>
+            </select>
+        </div>
+
+        <div class="version-container">
+            <label for="version">Version Selection</label>
+            <select id="version">
+                <option value="ALDI-International-Services" selected>ALDI International Services</option>
+                <option value="AHEAD">AHEAD</option>
+                <option value="ALDI-Digital-Services">ALDI Digital Services</option>
+            </select>
+        </div>
+
+        <div class="ok-btn-container">
+            <button class="ok-btn">OK</button>
+        </div>
+
+    </div>
+</div>
+
+<div class="travel-expenses-menu">
+
+    <div id="personal-data-container">
+        
+        <div id="user-first-name-container" class="mandatory-text">
+            <label class="inputLabel">First Name</label>
+            <input id="user-first-name-input" class="input-value" placeholder="e.g.: John">
+        </div>
+        <div id="user-last-name-container" class="mandatory-text">
+            <label class="inputLabel">Last Name</label>
+            <input id="user-last-name-input" class="input-value" placeholder="e.g.: Smith">
+        </div>
+        <div id="user-personal-number-container" class="mandatory-number">
+            <label  class="inputLabel">Personal Number</label>
+            <input id="user-personal-number-input" class="input-value">
+        </div>
+        
+    </div>
+
+    <div id="travel-data-container">
+        <div id="date-of-travel-from-container" class="mandatory-date">
+            <label class="inputLabel">Date of travel from</label>
+            <input id="date-of-travel-from" type="date" class="input-value">
+        </div>
+        <div id="date-of-travel-to-container" class="mandatory-date">
+            <label class="inputLabel">Date of travel to</label>
+            <input id="date-of-travel-to" type="date" class="input-value">
+        </div>
+        <div id="destination-container" class="mandatory-text">
+            <label id="destination" class="inputLabel">Destination</label>
+            <input>
+        </div>
+        
+    </div>
+
+    <div id="bank-data-container">
+        <div id="iban-container" class="mandatory-text">
+            <label id="iban" class="inputLabel">IBAN</label>
+            <input>
+        </div>
+        <div id="bic-container" class="mandatory-text">
+            <label id="bic" class="inputLabel">BIC</label>
+            <input>
+        </div>    
+        <div id="bank-container" class="mandatory-text">    
+            <label id="bank" class="inputLabel">Bank</label>
+            <input>
+        </div>
+    </div>
+
+
+    <div id="transportation">
+
+        <label for="own-vehicle" class="inputLabel">own vehicle</label>
+        <input type="checkbox" id="own-vehicle">
+
+        <label for="company-vehicle" class="inputLabel">company vehicle</label>
+        <input type="checkbox" id="company-vehicle">
+
+        <label for="hire-vehicle" class="inputLabel">hire vehicle</label>
+        <input type="checkbox" id="hire-vehicle">
+
+        <label for="train-aeroplane" class="inputLabel">train aeroplane</label>
+        <input type="checkbox" id="train-aeroplane">
+
+        <div id="registration-plate">
+            <label class="inputLabel">registration plate</label>
+            <input id="registration-plate-input">
+        </div>
+
+    </div>
+
+    <div id="version-title-container">
+        <p id="version-title">ALDI International Services</p>
+    </div>
+
+    <table id="travel-expenses-table">
+
+        <tr>
+            <td class="inputLabel">Car Travel Costs</td>
+            <td class="inputLabel">Expenses incurred for meals</td>
+            <td class="inputLabel">Incidental Expenses</td>
+        </tr>
+
+        <tr>
+            <td class="inputLabel">Date</td>
+            <td class="inputLabel">Dep. time</td>
+            <td class="inputLabel">Return time</td>
+            <td class="inputLabel">Destination</td>
+            <td class="inputLabel">Purpose of travel</td>
+            <td class="inputLabel">km travelled</td>
+            <td class="inputLabel">minus commuting distance in km</td>
+            <td class="inputLabel">sub-total</td>
+            <td class="inputLabel">Fixed rate</td>
+            <td class="inputLabel">Deduction for meals</td>
+            <td class="inputLabel">Type</td>
+            <td class="inputLabel">Amount in EUR</td>
+        </tr>
+
+    </table>
+
+    <div id="subtotal-car-travel-costs">
+        <label class="inputLabel">Subtotal Car Travel Costs</label>
+        <input class="subtotal input-value" readonly>
+    </div>
+
+    <div id="subtotal-meal-costs">
+        <label class="inputLabel">Subtotal Meal Costs</label>
+        <input class="subtotal input-value" readonly>
+    </div>
+
+    <div id="subtotal-incidental-costs">
+        <label class="inputLabel">Subtotal Incidental Costs</label>
+        <input class="subtotal input-value" readonly>
+    </div>
+
+    <div id="total-cost">
+        <label>Total</label>
+        <input class="input-value" readonly>
+    </div>
+
+    <div class="cost-object-container">
+
+        <label class="inputLabel">Kostenstelle</label>
+        <label class="inputLabel">(bitte ankreuzen)</label>
+
+        <div class="ais-cost-centre">
+
+            <div>
+                <input type="radio" class="radio-btn" name="ais-cost-centre" id="041-ib" value="041-ib">
+                <label for="041-ib">041/IB</label>
+            </div>
+            <div>
+                <input type="radio" class="radio-btn" name="ais-cost-centre" id="051-iia" value="051-iia">
+                <label for="051-iia">051/IIA</label>
+            </div>
+            <div>
+                <input type="radio" class="radio-btn" name="ais-cost-centre" id="052-iia-rcm" value="052-iia-rcm">
+                <label for="052-iia-rcm">052/IIA RCM</label>
+            </div>
+            <div>
+                <input type="radio" class="radio-btn" name="ais-cost-centre" id="061-iit" value="061-iit">
+                <label for="061-iit">061/IIT</label>
+            </div>
+            <div>
+                <input type="radio" class="radio-btn" name="ais-cost-centre" id="011-ias-intern" value="011-ias-intern">
+                <label for="011-ias-intern">011/IAS Intern</label>
+            </div>
+            <div>
+                <input type="radio" class="radio-btn" name="ais-cost-centre" id="012-ias-extern" value="012-ias-extern">
+                <label for="012-ias-extern">012/IAS Extern</label>
+            </div>
+            <div>
+                <input type="radio" class="radio-btn" name="ais-cost-centre" id="013-ias-sondernkosten" value="013-ias-sondernkosten">
+                <label for="013-ias-sondernkosten">013/IAS Sondernkosten</label>
+            </div>
+            <div>
+                <input type="radio" class="radio-btn" name="ais-cost-centre" id="014-ias-translation" value="014-ias-translation">
+                <label for="014-ias-translation">014/IAS Translation</label>
+            </div>
+
+        </div>
+
+        <div class="ahead-cost-centre">
+
+            <div>
+                <input type="radio" class="radio-btn" name="ahead-cost-centre" id="5100-project" value="5100-project">
+                <label for="5100-project">5100 AHEAD Project</label>
+            </div>
+
+            <div>
+                <input type="radio" class="radio-btn" name="ahead-cost-centre" id="5000-non-project" value="5000-non-project">
+                <label for="5000-non-project">5100 AHEAD Non-project</label>
+            </div>
+
+        </div>
+
+        <div id="cost-id-nr-container">
+            <label id="cost-id-nr-title">Cost ID Nr.</label>
+            <input type="text" class="cost-id-nr-input input-value">
+        </div>
+
+    </div>
+
+    <div>
+        <button id="back-btn">Back</button>
+    </div>
+
+    <div>
+        <button id="add-expense-btn">Add Expense</button>
+    </div>
+
+    <div>
+        <button id="submit-btn">Submit</button>
+    </div>
+
+</div>
+
+<div class="kontierung-menu">
+
+    <div id="company-title-container">
+        <p id="company-title"></p>
+    </div>
+
+    <div id="accountant-data-container">
+
+        <label>Sachbearbeiter Nr.</label>
+        <input>
+
+        <label>Nachname</label>
+        <input>
+
+        <label>Vorname</label>
+        <input>
+
+        <label>Kontierungsdatum</label>
+        <span id="kontierungs-datum"></span>
+
+        <label>ServiceNOW Ticket ID</label>
+        <span id="servicenow-ticket-id"></span>
+
+    </div>
+
+    <div id="user-data-container">
+        <div>
+            <label>Vorname</label>
+            <span id="user-first-name" class="user-data"></span>
+        </div>
+        <div>
+            <label>Nachname</label>
+            <span id="user-last-name" class="user-data"></span>
+        </div>
+        <div>
+            <label>Personalnummer</label>
+            <span id="user-personal-number" class="user-data"></span>
+        </div>
+        <div>
+            <label>Reisedatum von</label>
+            <span id="user-date-of-travel-from" class="user-data"></span>
+        </div>
+        <div>
+            <label>Reisedatum bis</label>
+            <span id="user-date-of-travel-to" class="user-data"></span>
+        </div>
+        <div>
+            <label>Fahrtkosten</label>
+            <span id="user-car-travel-costs" class="user-data"></span>
+            <span>EUR</span>
+        </div>
+        <div>
+            <label>Verpflegungskosten</label>
+            <span id="user-meal-costs" class="user-data"></span>
+            <span>EUR</span>
+        </div>
+        <div>
+            <label>Nebenkosten</label>
+            <span id="user-incidental-costs" class="user-data"></span>
+            <span>EUR</span>
+        </div>
+        <div></div>
+            <label>Alle Kosten</label>
+            <span id="user-total-costs" class="user-data"></span>
+            <span>EUR</span>
+        </div>
+        <div>
+            <label id="user-cost-id-number-label">Cost ID Number</label>
+            <span id="user-cost-id-number" class="user-data"></span>
+        </div>
+    </div>
+
+    <div>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+
+</html>
