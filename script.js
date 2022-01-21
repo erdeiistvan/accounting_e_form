@@ -3,8 +3,6 @@ let startMenu = document.querySelector(".start-menu");
 let backBtn = document.querySelector("#back-btn");
 let travelExpMenu = document.querySelector(".travel-expenses-menu");
 
-/*startBtn.addEventListener('click', nextPage);*/
-
 startBtn.addEventListener('click', nextPage);
 
 backBtn.addEventListener('click', prevPage);
